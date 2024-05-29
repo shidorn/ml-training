@@ -3,3 +3,12 @@
  * @param {number[]} arr The array of numbers.
  * @return {number} The sum of all numbers in the array.
  */
+
+function SumOfArray([...numbers]) {
+    let sum = 0;
+    for(let number of numbers){
+        sum += number;
+    }
+    return sum;
+}
+console.log(SumOfArray([1,10,12]));
