@@ -5,8 +5,8 @@
  * @return {number} The temperature in Fahrenheit.
  */
 
-function TempConverter(celsius) {
+function CeliusToFahrenheitConverter(celsius) {
     let Fahrenheit = (celsius * 9/5) + 32;
     return Fahrenheit;
 }
-console.log(TempConverter(60));
+console.log(CeliusToFahrenheitConverter(60));
