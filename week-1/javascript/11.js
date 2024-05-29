@@ -12,3 +12,10 @@ const entities = {
   '"': "&quot;",
   "'": "&apos;",
 };
+
+function convertHtmlIntities(str) {
+  console.log(str.replace())
+  return ""
+}
+
+console.log(convertHtmlIntities("Dolce &amp; Gabbana"));
