@@ -6,7 +6,7 @@
 
 function checkIfNumber(num) {
     if(num === parseInt(num)) return true;
-    throw "Error: parameter is not an integer";
+    throw {ErrorCode : 0 ,Message: "parameter is not an integer"};
 }
 
 console.log(checkIfNumber(1));
