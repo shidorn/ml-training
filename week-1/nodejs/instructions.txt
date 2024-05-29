@@ -1,5 +1,7 @@
 Make a basic REST API that creates, updates, deletes, and retrieves a user.
 
+You Nodejs and Express
+
 The data should be stored in a JSON file. You can assume that the model for the user is as follows:
 
 {
@@ -22,7 +24,10 @@ The data should be stored in a JSON file. You can assume that the model for the 
       "type": "work",
       "number": "555-5678"
     }
-  ]
+  ],
+  createdAt: 2022-01-01T00:00:00.000Z,
+  updatedAt: 2022-01-01T00:00:00.000Z,
+  deletedAt: null
 }
 
 The API should have the following endpoints:
