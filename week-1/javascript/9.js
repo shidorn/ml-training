@@ -6,7 +6,7 @@
 
 function checkIfPositiveNumber(num) {
     if(num === parseInt(num))if(Math.sign(num) == 1) return true;
-    throw "Error: parameter is not an positive integer";
+    throw {ErrorCode : 0 ,Message: "parameter is not an positive integer"};
 }
 
 console.log(checkIfPositiveNumber(1));
