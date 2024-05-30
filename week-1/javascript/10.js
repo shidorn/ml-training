@@ -4,7 +4,6 @@
  * @param {number} num2 The second number to check.
  * @throws {Error} If the second number is 0.
  */
-<<<<<<< HEAD
 
 function checkIfNum2isZero(num1, num2 = 0) {
     if(num2 != 0) return "Not Zero"
@@ -12,5 +11,3 @@ function checkIfNum2isZero(num1, num2 = 0) {
 }
 
 console.log(checkIfNum2isZero(1,0));
-=======
->>>>>>> act/master

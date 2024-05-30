@@ -5,7 +5,6 @@
  * For numbers which are multiples of both three and five print 'FizzBuzz'.
  * @param {number} n The number to print.
  */
-<<<<<<< HEAD
 
 function PrintFizzBuzz(number) {
     for(let i = 1 ; i <= number; i++){
@@ -21,5 +20,3 @@ function PrintFizzBuzz(number) {
     }    
 }
 PrintFizzBuzz(15);
-=======
->>>>>>> act/master

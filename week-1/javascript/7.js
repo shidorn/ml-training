@@ -3,7 +3,6 @@
  * @param {number} num The number to check.
  * @throws {Error} If the number is not an integer.
  */
-<<<<<<< HEAD
 
 function checkIfNumber(num) {
     if(num === parseInt(num)) return true;
@@ -11,5 +10,3 @@ function checkIfNumber(num) {
 }
 
 console.log(checkIfNumber(1));
-=======
->>>>>>> act/master

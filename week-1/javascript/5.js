@@ -4,12 +4,9 @@
  * @param {number} celsius The temperature in Celsius.
  * @return {number} The temperature in Fahrenheit.
  */
-<<<<<<< HEAD
 
 function CeliusToFahrenheitConverter(celsius) {
     let Fahrenheit = (celsius * 9/5) + 32;
     return Fahrenheit;
 }
 console.log(CeliusToFahrenheitConverter(60));
-=======
->>>>>>> act/master
