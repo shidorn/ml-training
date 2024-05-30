@@ -22,3 +22,20 @@ const students = [
   { name: "Tom", mark: 65 },
   { name: "Nancy", mark: 75 },
 ];
+
+function Average() {
+  let sum = 0;
+  let mark = "";
+  for(let i = 0; i < students.length; i++) {
+    sum += students[i].mark;
+  }
+let average = sum / students.length;
+if(average < 60) mark = "F";
+if(average >= 60 && average <= 70) mark = "D";
+if(average >= 70 && average <= 80) mark = "C";
+if(average >= 80 && average <= 90) mark = "B";
+if(average > 90) mark = "A";;
+return average +' : '+mark;
+}
+
+console.log(Average());
