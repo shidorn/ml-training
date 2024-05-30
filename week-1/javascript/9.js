@@ -3,6 +3,7 @@
  * @param {number} num The number to check.
  * @throws {Error} If the number is not a positive integer.
  */
+<<<<<<< HEAD
 
 function checkIfPositiveNumber(num) {
     if(num === parseInt(num))if(Math.sign(num) == 1) return true;
@@ -10,3 +11,5 @@ function checkIfPositiveNumber(num) {
 }
 
 console.log(checkIfPositiveNumber(1));
+=======
+>>>>>>> act/master

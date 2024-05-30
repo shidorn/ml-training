@@ -3,6 +3,7 @@
  * 'MM-DD-YYYY HH:MM:SS'.
  * @return {string} The current date and time in the format 'MM-DD-YYYY HH:MM:SS'.
  */
+<<<<<<< HEAD
 
 function getCurrentDate(){
     const today = new Date();
@@ -17,3 +18,5 @@ function getCurrentDate(){
 }
 
 console.log(getCurrentDate());
+=======
+>>>>>>> act/master

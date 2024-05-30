@@ -3,6 +3,7 @@
  * @param {number} num The number to check.
  * @return {boolean} True if the number is even, false if it is odd.
  */
+<<<<<<< HEAD
 
 function EvenOddNumberIdentifier(number) {
     if(number % 2 == 0){
@@ -11,3 +12,5 @@ function EvenOddNumberIdentifier(number) {
     return false;
 }
 console.log(EvenOddNumberIdentifier(5));
+=======
+>>>>>>> act/master
