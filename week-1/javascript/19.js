@@ -9,3 +9,11 @@
  * @param {number[]} arr2
  * @returns {number[]}
  */
+
+function mergeArray(arr1, arr2) {
+    let arr = [];
+    arr = arr1.concat(arr2);
+    return arr.filter((item, index) => arr.indexOf(item) === index);
+}
+
+console.log(mergeArray([1,2,3,4,4,5,234,234,32,],[2,3,4,6,3,23,4,1,8]));
