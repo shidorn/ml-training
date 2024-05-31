@@ -6,3 +6,11 @@
  * Example array: [5, 2, 8, 1, 9, 3]
  * Expected output: "The lowest number is 1 and the highest number is 9."
  */
+
+const getHighestAndLowestNumbers = (arr) => {
+  const highest = Math.max(...arr);
+  const lowest = Math.min(...arr);
+  return `The lowest number is ${lowest} and the highest number is ${highest}.`;
+};
+
+console.log(getHighestAndLowestNumbers([5, 2, 8, 1, 9, 3]));
