@@ -15,10 +15,39 @@
  * @return {number} The average marks of the students.
  */
 
-const students = [
+interface Student {
+  name: string;
+  mark: number;
+}
+
+const students: Student[] = [
   { name: "John", mark: 90 },
   { name: "Jane", mark: 85 },
   { name: "Joe", mark: 95 },
   { name: "Tom", mark: 65 },
   { name: "Nancy", mark: 75 },
 ];
+
+const computedGrade = (averageMark: number): string => {
+  if (averageMark < 60) {
+    return "F";
+  } else if (averageMark < 70) {
+    return "D";
+  } else if (averageMark < 80) {
+    return "C";
+  } else if (averageMark < 90) {
+    return "B";
+  } else {
+    return "A";
+  }
+};
+
+const getAverageMark = (students: Student[]): number => {
+  let sum = 0;
+  for (let i = 0; i < students.length; i++) {
+    sum += students[i].mark;
+  }
+  return sum / students.length;
+};
+
+console.log(computedGrade(getAverageMark(students)));

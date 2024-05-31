@@ -6,3 +6,14 @@
  * Example string: "The quick brown fox jumps over the lazy dog"
  * Expected output: "The Quick Brown Fox Jumps Over The Lazy Dog"
  */
+
+const capitalizeFirstLetter = (str: string): string => {
+  return str
+    .split(" ")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+};
+
+console.log(
+  capitalizeFirstLetter("The quick brown fox jumps over the lazy dog")
+);

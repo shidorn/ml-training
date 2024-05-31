@@ -12,3 +12,11 @@ const entities = {
   '"': "&quot;",
   "'": "&apos;",
 };
+
+const convertEntities = (str: string): string => {
+  return str.replace(/[&<>"']/g, (char) => {
+    return entities[char];
+  });
+};
+
+console.log(convertEntities("Dolce & Gabbana"));
