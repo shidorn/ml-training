@@ -16,3 +16,60 @@
  * @param {string[]} items
  * @returns {string}
  */
+
+class ShoppingCart {
+  constructor(items = []) {
+    this.cart = items;
+  }
+
+  addItem(item) {
+    if (this.cart.length > 10) {
+      throw new Error("You can only have 10 items in your cart");
+    }
+    this.cart.push(item);
+  }
+
+  removeItem(item) {
+    for (let i = 0; i < this.cart.length; i++) {
+      if (this.cart[i].name === item.name) {
+        this.cart.splice(i, 1);
+        return;
+      }
+    }
+  }
+
+  displayTotalPrice() {
+    let totalPrice = 0;
+    this.cart.forEach((item) => {
+      totalPrice += item.price;
+    });
+    return totalPrice;
+  }
+
+  displayTotalItems() {
+    return this.cart.length;
+  }
+
+  displayCart() {
+    return this.cart;
+  }
+}
+
+const cart = new ShoppingCart([
+  { name: "apple", price: 0.5 },
+  { name: "banana", price: 0.75 },
+  { name: "orange", price: 1.25 },
+]);
+
+console.log("===== initial cart =====");
+console.log("total price: ", cart.displayTotalPrice());
+console.log("total items: ", cart.displayTotalItems());
+console.log("cart: ", cart.displayCart());
+
+cart.addItem({ name: "grape", price: 3 });
+cart.removeItem({ name: "apple", price: 0.5 });
+
+console.log("\n\n===== after adding and removing items =====");
+console.log("total price: ", cart.displayTotalPrice());
+console.log("total items: ", cart.displayTotalItems());
+console.log("cart: ", cart.displayCart());
