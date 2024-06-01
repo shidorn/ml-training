@@ -8,3 +8,16 @@
  * @param {string} str
  * @returns {string}
  */
+function swapCaseString(str) {
+    var strSwapped = "";
+    for (var i = 0; i < str.length; i++) {
+        if (str[i] === str[i].toLowerCase()) {
+            strSwapped += str[i].toUpperCase();
+        }
+        else {
+            strSwapped += str[i].toLowerCase();
+        }
+    }
+    return strSwapped;
+}
+console.log(swapCaseString("Hello World"));
