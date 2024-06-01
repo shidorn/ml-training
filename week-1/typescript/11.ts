@@ -22,5 +22,4 @@ function convertHTMLEntities(str: string): string {
   }
   return str;
 }
-
 console.log(convertHTMLEntities("Dolce &amp; Gabbana &lt;3 &apos; Louis Vuitton &amp; Christian Dior"));
