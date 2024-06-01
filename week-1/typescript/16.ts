@@ -22,3 +22,28 @@ const students = [
   { name: "Tom", mark: 65 },
   { name: "Nancy", mark: 75 },
 ];
+
+function Average() : number[] | string[] {
+  var mark = "";
+  let average = [];
+  for (var i = 0; i < students.length; i++) {
+      if (students[i].mark < 60) {
+          mark = "F";
+      }
+      if (students[i].mark >= 60 && students[i].mark < 70) {
+          mark = "D";
+      } 
+      if (students[i].mark >= 70 && students[i].mark < 80) {
+          mark = "C";
+      }
+      if (students[i].mark >= 80 && students[i].mark < 90) {
+          mark = "B";
+      } 
+      if (students[i].mark >= 90) {
+          mark = "A";
+      } 
+      average.push(students[i].name + ": "+ students[i].mark +": "+mark);
+  }
+  return average;
+}
+console.log(Average());
