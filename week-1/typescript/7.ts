@@ -9,4 +9,4 @@ function checkIfNumberTS(num: number): boolean {
     throw {ErrorCode : 0 ,Message: "parameter is not an integer"};
 }
 
-console.log(checkIfNumberTS("sd"));
+console.log(checkIfNumberTS(1));
