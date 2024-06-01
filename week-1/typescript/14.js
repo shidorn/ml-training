@@ -8,8 +8,8 @@
  * Expected output: "The lowest number is 1 and the highest number is 9."
  */
 function HighLow(arr) {
-    var highLowStr = "";
-    var sorted = arr.slice().sort(function (a, b) {
+    let highLowStr = "";
+    let sorted = arr.slice().sort(function (a, b) {
         return a - b;
     });
     highLowStr = "The lowest number is " + sorted[0] + " and the highest number is " + sorted[sorted.length - 1] + ". ";

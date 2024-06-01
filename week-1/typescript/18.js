@@ -17,7 +17,7 @@
  * @param {string[]} items
  * @returns {string}
  */
-var cart = [
+let cart = [
     { name: "Banana", price: 123 },
     { name: "PineApple", price: 456 },
     { name: "WaterMelon", price: 789 },
@@ -31,16 +31,16 @@ function AddToCart(items) {
     return cart;
 }
 function removeFromCart(items) {
-    for (var i = 0; i < cart.length; i++) {
+    for (let i = 0; i < cart.length; i++) {
         if (cart[i].name.toLowerCase() == items.name.toLowerCase()) {
-            cart = cart.filter(function (obj) { return obj.name.toLocaleLowerCase() !== items.name.toLowerCase(); });
+            cart = cart.filter(obj => obj.name.toLocaleLowerCase() !== items.name.toLowerCase());
         }
     }
     return cart;
 }
 function totalPrice() {
-    var TotalPrice = 0;
-    for (var i = 0; i < cart.length; i++) {
+    let TotalPrice = 0;
+    for (let i = 0; i < cart.length; i++) {
         TotalPrice += cart[i].price;
     }
     return TotalPrice;

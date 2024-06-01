@@ -20,13 +20,13 @@
  * @param {string} password
  * @returns {string}
  */
-var passwordPattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?!.*\s).{8,}$/;
-var noUppercasePattern = /^[^A-Z]*$/;
-var noLowercasePattern = /^[^a-z]*$/;
-var noNumberPattern = /^[^0-9]*$/;
-var noSpecCharPattern = /^[^!@#$%^&*()\-_=+[\]{};:'",.<>/?`~\\|]*$/;
+let passwordPattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?!.*\s).{8,}$/;
+let noUppercasePattern = /^[^A-Z]*$/;
+let noLowercasePattern = /^[^a-z]*$/;
+let noNumberPattern = /^[^0-9]*$/;
+let noSpecCharPattern = /^[^!@#$%^&*()\-_=+[\]{};:'",.<>/?`~\\|]*$/;
 function ValidatePassword(password) {
-    var str = "";
+    let str = "";
     if (password.length < 8) {
         return str = "Password must be at least 8 characters long.";
     }
