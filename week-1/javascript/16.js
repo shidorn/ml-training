@@ -31,10 +31,10 @@ function Average() {
   }
 let average = sum / students.length;
 if(average < 60) mark = "F";
-if(average >= 60 && average <= 70) mark = "D";
-if(average >= 70 && average <= 80) mark = "C";
-if(average >= 80 && average <= 90) mark = "B";
-if(average > 90) mark = "A";;
+if(average >= 60 && average < 70) mark = "D";
+if(average >= 70 && average < 80) mark = "C";
+if(average >= 80 && average < 90) mark = "B";
+if(average >= 90) mark = "A";;
 return average +' : '+mark;
 }
 
