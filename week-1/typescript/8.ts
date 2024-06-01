@@ -3,3 +3,16 @@
  * @param {string} str The string to check.
  * @return {string} The string with all vowels.
  */
+
+function VowelsInStrTS(str: string): string {
+    let vowels = "";
+    for(let i =0; i < str.length; i++) {
+        let letter = str[i].toLowerCase();
+        if("aeiou".includes(letter)){
+            vowels += letter;
+        }
+    }
+    return vowels;
+}
+
+console.log(VowelsInStrTS("qwertasdfg"));
