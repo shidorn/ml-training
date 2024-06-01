@@ -4,3 +4,10 @@
  * @param {number} num2 The second number to check.
  * @throws {Error} If the second number is 0.
  */
+
+function checkIfNum2isZero(num1: number, num2: number = 0) : string {
+    if(num2 != 0) return "Not Zero"
+    throw {ErrorCode : 0 ,Message: "2nd parameter is zero"};
+}
+
+console.log(checkIfNum2isZero(1,0));
