@@ -20,3 +20,28 @@
  * @param {string} password
  * @returns {string}
  */
+var passwordPattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?!.*\s).{8,}$/;
+var noUppercasePattern = /^[^A-Z]*$/;
+var noLowercasePattern = /^[^a-z]*$/;
+var noNumberPattern = /^[^0-9]*$/;
+var noSpecCharPattern = /^[^!@#$%^&*()\-_=+[\]{};:'",.<>/?`~\\|]*$/;
+function ValidatePassword(password) {
+    var str = "";
+    if (password.length < 8) {
+        return str = "Password must be at least 8 characters long.";
+    }
+    if (noUppercasePattern.test(password)) {
+        return str = "Password must contain at least one uppercase letter";
+    }
+    if (noLowercasePattern.test(password)) {
+        return str = "Password must contain at least one lowercase letter";
+    }
+    if (noNumberPattern.test(password)) {
+        return str = "Password must contain at least one number";
+    }
+    if (noSpecCharPattern.test(password)) {
+        return str = "Password must contain at least one special character";
+    }
+    return str = "Password is valid";
+}
+console.log(ValidatePassword("Pass@1sdsadsad"));
