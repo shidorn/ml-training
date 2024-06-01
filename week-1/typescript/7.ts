@@ -3,3 +3,10 @@
  * @param {number} num The number to check.
  * @throws {Error} If the number is not an integer.
  */
+
+function checkIfNumberTS(num: number): boolean {
+    if(num === num) return true;
+    throw {ErrorCode : 0 ,Message: "parameter is not an integer"};
+}
+
+console.log(checkIfNumberTS("sd"));
