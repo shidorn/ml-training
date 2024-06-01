@@ -5,17 +5,21 @@
  */
 
 // ENTITY OBJECT
-const entities = {
-  "&": "&amp;",
-  "<": "&lt;",
-  ">": "&gt;",
-  '"': "&quot;",
-  "'": "&apos;",
+var entities = {
+  "&amp;": "&",
+  "&lt;": "<",
+  "&gt;": ">",
+  "&quot;": "\"",
+  "&apos;": "'",
 };
-
-function convertHtmlIntities(str) {
-  console.log(str.replace())
-  return ""
+function convertHTMLEntities(str) {
+  for (var entity in entities) {
+      if (Object.prototype.hasOwnProperty.call(entities, entity)) {
+          var regex = new RegExp(entity, 'g');
+          str = str.replace(regex, entities[entity]);
+      }
+  }
+  return str;
 }
 
-console.log(convertHtmlIntities("Dolce &amp; Gabbana"));
+console.log(convertHTMLEntities("Dolce &amp; Gabbana &lt;3 &apos; Louis Vuitton &amp; Christian Dior"));
