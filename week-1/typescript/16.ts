@@ -15,7 +15,12 @@
  * @return {number} The average marks of the students.
  */
 
-const students = [
+interface Student {
+  name: string;
+  mark: number;
+}
+
+const students: Student[] = [
   { name: "John", mark: 90 },
   { name: "Jane", mark: 85 },
   { name: "Joe", mark: 95 },
