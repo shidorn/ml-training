@@ -21,3 +21,12 @@ model tasks {
   updatedAt DateTime?
   deletedAt DateTime?
 }
+
+model contacts {
+  id        Int       @id @default(autoincrement())
+  name      String    @default("")
+  number    String    @default("")
+  createdAt DateTime  @default(now())
+  updatedAt DateTime?
+  deletedAt DateTime?
+}
