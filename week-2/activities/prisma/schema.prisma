@@ -30,3 +30,13 @@ model contacts {
   updatedAt DateTime?
   deletedAt DateTime?
 }
+
+model products {
+  id        Int       @id @default(autoincrement())
+  name      String    @default("")
+  price     Float
+  stock     Int       @default(0)
+  createdAt DateTime  @default(now())
+  updatedAt DateTime?
+  deletedAt DateTime?
+}
