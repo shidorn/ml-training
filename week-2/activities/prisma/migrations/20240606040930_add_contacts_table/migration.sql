@@ -1,10 +1,10 @@
 -- CreateTable
-CREATE TABLE `tasks` (
+CREATE TABLE `contacts` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
     `name` VARCHAR(191) NOT NULL DEFAULT '',
-    `mark` BOOLEAN NOT NULL DEFAULT false,
+    `number` VARCHAR(191) NOT NULL DEFAULT '',
     `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
-    `updatedAt` DATETIME(3) NOT NULL,
+    `updatedAt` DATETIME(3) NULL,
     `deletedAt` DATETIME(3) NULL,
 
     PRIMARY KEY (`id`)
