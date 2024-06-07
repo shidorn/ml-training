@@ -36,4 +36,9 @@ export class ProductInventoryController {
   select(@Param('name') name: string) {
     return this.productInventoryService.checkStock(name);
   }
+
+  @Get()
+  findAll() {
+    return this.productInventoryService.allProducts();
+  }
 }

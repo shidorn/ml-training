@@ -49,10 +49,22 @@ export class ProductInventoryService {
         },
       });
       if (!checkStock) {
-        console.log(checkStock);
         return 'Product not found.';
       }
-      return checkStock;
+      const product = new UpdateProductDto();
+      product.name = checkStock[0].name;
+      product.stock = checkStock[0].stock;
+      return product;
+    } catch (error) {
+      return error.message;
+    }
+  }
+
+  async allProducts() {
+    try {
+      return await this.prisma.products.findMany({
+        where: { deletedAt: null },
+      });
     } catch (error) {
       return error.message;
     }
