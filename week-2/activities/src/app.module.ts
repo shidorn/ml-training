@@ -6,9 +6,10 @@ import { PrismaModule } from './prisma/prisma.module';
 import { ContactListModule } from './contact-list/contact-list.module';
 import { ProductInventoryModule } from './product-inventory/product-inventory.module';
 import { HabitTrackerModule } from './habit-tracker/habit-tracker.module';
+import { BookLendingModule } from './book-lending/book-lending.module';
 
 @Module({
-  imports: [TasksModule, PrismaModule, ContactListModule, ProductInventoryModule, HabitTrackerModule],
+  imports: [TasksModule, PrismaModule, ContactListModule, ProductInventoryModule, HabitTrackerModule, BookLendingModule],
   controllers: [AppController],
   providers: [AppService],
 })

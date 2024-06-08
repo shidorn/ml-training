@@ -45,6 +45,7 @@ model User {
   id     Int     @id @default(autoincrement())
   name   String
   habits Habit[]
+  Book   Book[]
 }
 
 model Habit {
@@ -62,4 +63,14 @@ model Log {
   status  Boolean
   habitId Int
   habit   Habit    @relation(fields: [habitId], references: [id])
+}
+
+model Book {
+  id       Int       @id @default(autoincrement())
+  title    String
+  author   String
+  borrowed Boolean
+  userId   Int?
+  user     User?     @relation(fields: [userId], references: [id])
+  dueDate  DateTime?
 }
