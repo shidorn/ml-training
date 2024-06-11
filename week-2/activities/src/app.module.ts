@@ -9,7 +9,14 @@ import { HabitTrackerModule } from './habit-tracker/habit-tracker.module';
 import { BookLendingModule } from './book-lending/book-lending.module';
 
 @Module({
-  imports: [TasksModule, PrismaModule, ContactListModule, ProductInventoryModule, HabitTrackerModule, BookLendingModule],
+  imports: [
+    TasksModule,
+    PrismaModule,
+    ContactListModule,
+    ProductInventoryModule,
+    HabitTrackerModule,
+    BookLendingModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
