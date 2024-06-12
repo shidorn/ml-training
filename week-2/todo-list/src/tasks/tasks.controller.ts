@@ -29,6 +29,7 @@ export class TasksController {
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateTaskDto: UpdateTaskDto) {
     console.log(id);
+    console.log(updateTaskDto);
     return this.tasksService.update(+id, updateTaskDto);
   }
 
