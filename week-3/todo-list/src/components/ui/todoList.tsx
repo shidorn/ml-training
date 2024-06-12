@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { createTodo, deleteTodo, fetchTodos } from "@/app/api";
+import { updateTodo, createTodo, deleteTodo, fetchTodos } from "@/app/api";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
@@ -41,27 +41,54 @@ const TodoList: React.FC = () => {
     setTodos(todos.filter((todo) => todo.id !== todoId));
   };
 
+  const handleChangeTodo = async (todoId: number, completed: any) => {
+    const editTodo = await updateTodo({
+      todoId,
+      completed,
+    });
+    if (editTodo) {
+      setTodos(
+        todos.map((todo) =>
+          todo.id === todoId ? { ...todo, completed: !todo.completed } : todo
+        )
+      );
+    }
+  };
+
   return (
     <div>
-      <h1>TODO LIST</h1>
-      <Input
-        type="text"
-        value={title}
-        onChange={(e) => setNewTodo(e.target.value)}
-        placeholder="Enter a new todo..."
-      />
-      <Button onClick={handleAddTodo}>Add</Button>
+      <h1 style={{ textAlign: "center", fontSize: "xx-large" }}>TODO LIST</h1>
+      <div style={{ display: "inline-flex" }}>
+        {" "}
+        <Input
+          type="text"
+          value={title}
+          onChange={(e) => setNewTodo(e.target.value)}
+          placeholder="Enter a new todo..."
+          style={{ marginRight: "10px" }}
+        />
+        <Button onClick={handleAddTodo}>Add</Button>
+      </div>
+
       <ul>
         {todos.map((todo) => (
-          <li key={todo.id}>
-            <Checkbox checked={todo.completed} />
+          <li key={todo.id} style={{ marginTop: "10px" }}>
+            <Checkbox
+              checked={todo.completed}
+              onCheckedChange={(checked) => handleChangeTodo(todo.id, checked)}
+            />
             <span
               style={{
                 textDecoration: todo.completed ? "line-through" : "none",
               }}
             >
               {todo.title}
-              <Button onClick={() => handleDeleteTodo(todo.id)}>Delete</Button>
+              <Button
+                onClick={() => handleDeleteTodo(todo.id)}
+                variant="destructive"
+              >
+                Delete
+              </Button>
             </span>
           </li>
         ))}

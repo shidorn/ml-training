@@ -44,3 +44,29 @@ export async function deleteTodo(todoId) {
     return error.message;
   }
 }
+const removeTodoId = (obj) => {
+  const { todoId, ...rest } = obj;
+  return rest;
+};
+export async function updateTodo(todoData) {
+  try {
+    const cnvrtToNum = todoData;
+    const id = cnvrtToNum.todoId;
+    const completed = removeTodoId(todoData);
+
+    const response = await fetch(`${API_BASE_URL}/tasks/${id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(completed),
+    });
+    console.log(response);
+    if (!response.ok) {
+      throw new Error("Failed to update todo");
+    }
+    return true;
+  } catch (error) {
+    return error.message;
+  }
+}
