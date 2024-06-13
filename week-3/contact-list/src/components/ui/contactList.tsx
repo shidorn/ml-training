@@ -3,7 +3,8 @@
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
-import { fetchContacts } from "@/app/api";
+import { fetchContacts, addContact } from "@/app/api";
+import Modal from "@/components/ui/modal";
 
 interface Contacts {
   id: number;
@@ -14,14 +15,33 @@ interface Contacts {
 const ContactList: React.FC = () => {
   const [contacts, setContacts] = useState<Contacts[]>([]);
 
+  const [modalOpen, setModalOpen] = useState(false);
+
   useEffect(() => {
     loadContacts();
   }, []);
 
   const loadContacts = async () => {
     const contacts = await fetchContacts();
-    console.log(contacts);
     setContacts(contacts);
+  };
+
+  const openModal = () => {
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+  };
+
+  const handleModalAddContact = async (name: string, number: string) => {
+    const newContacts = await addContact({
+      name,
+      number,
+    });
+    console.log(newContacts);
+    setContacts([...contacts, newContacts]);
+    closeModal();
   };
 
   return (
@@ -33,12 +53,15 @@ const ContactList: React.FC = () => {
         {" "}
         <Input
           type="text"
-          //   value={}
-          //   onChange={(e) => setNewTodo(e.target.value)}
           placeholder="Search contact..."
           style={{ marginRight: "10px" }}
         />
-        <Button>+</Button>
+        <Button onClick={openModal}>+</Button>
+        <Modal
+          isOpen={modalOpen}
+          closeModal={closeModal}
+          handleModalAddContact={handleModalAddContact}
+        />
       </div>
       <div>
         <ul>
