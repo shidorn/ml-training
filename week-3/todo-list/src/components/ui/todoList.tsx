@@ -83,13 +83,13 @@ const TodoList: React.FC = () => {
               }}
             >
               {todo.title}
-              <Button
-                onClick={() => handleDeleteTodo(todo.id)}
-                variant="destructive"
-              >
-                Delete
-              </Button>
             </span>
+            <Button
+              onClick={() => handleDeleteTodo(todo.id)}
+              variant="destructive"
+            >
+              Delete
+            </Button>
           </li>
         ))}
       </ul>
