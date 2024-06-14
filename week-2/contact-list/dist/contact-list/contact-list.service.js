@@ -29,6 +29,7 @@ let ContactListService = class ContactListService {
     }
     async edit(id, updateContactDto) {
         try {
+            console.log(updateContactDto);
             updateContactDto.updatedAt = new Date();
             return await this.prisma.contacts.update({
                 where: { id },
